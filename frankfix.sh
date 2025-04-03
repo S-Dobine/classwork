@@ -13,7 +13,10 @@ fi
   git config --global --unset pull.rebase
   git remote remove frankscode
   git remote add frankscode https://github.com/grandcircusco/CSharpAHBC-March-2025-Code.git
+<<<<<<< HEAD
   git config --global core.editor "code -w -n"
+=======
+>>>>>>> 600baf2 (Instructor Push 03/31/2025 11:08:17)
   git config --global merge.tool "merge --no-edit"
   git pull frankscode main --allow-unrelated-histories
   git remote -v
