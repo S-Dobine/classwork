@@ -28,7 +28,23 @@ class Program
         Console.WriteLine("--- Starting Program ---");
         
         Console.Write("Enter a number: ");
-        number1 = int.Parse(Console.ReadLine());
+        //number1 = int.Parse(Console.ReadLine());
+        
+        string aLine;
+        
+        aLine = Console.ReadLine();
+        number1 = int.Parse(aLine);
+        
+        Console.Write("Enter a number: ");
+        aLine = Console.ReadLine();
+        number2 = int.Parse(aLine);
+        
+        Console.Write("Enter a number: ");
+        aLine = Console.ReadLine();
+        number3 = int.Parse(aLine);
+        
+        sum = number1 + number2 + number3;
+        Console.WriteLine($"The sum is: {sum}");
         
         Console.WriteLine("--- Ending Program ---");
     }
