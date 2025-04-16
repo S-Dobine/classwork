@@ -113,15 +113,15 @@ class Program
             return "This is a skyscraper!";
         }
 
-        // We KNOW if we get here the number has to be 50 or greater 
-        // We've handled all other situations alread
-        return "This is a SUPER skyscraper!";
-        
-        // This return is required because C# doesn't know that we've handled all possible situations
-        // so it wants a return in case we haven't
+        // // We KNOW if we get here the number has to be 50 or greater 
+        // // We've handled all other situations alread
+        // return "This is a SUPER skyscraper!";
         //
-        // to avoid this, remove the last else if
-        //return "I don't know";
+        // // This return is required because C# doesn't know that we've handled all possible situations
+        // // so it wants a return in case we haven't
+        // //
+        // // to avoid this, remove the last else if
+        // //return "I don't know";
     }
     
 } // End of class Program
