@@ -11,8 +11,26 @@ class Program
             extract parts of a string into an array based on characters in ()
          */
 
-        Console.WriteLine("Enter a sentece.")
+        Console.WriteLine("Enter a sentence.");
         string sentence = Console.ReadLine();
-        string[] splitSentence = sentence.Split("");
+        
+        
+        List<string> splitSentence = sentence.Split(" ").ToList(); // Converts the array to a list
+        
+        //string[] splitSentence = sentence.Split(" ");
+        
+        //  for (int i = 0; i < splitSentence.Length; i++) // to process an array 
+        for (int i = 0; i < splitSentence.Count(); i++) // to process a list to get # of elements
+        {
+            Console.WriteLine(splitSentence[i]);
+            Console.WriteLine("Words #: " + (i+1) + " is: " + splitSentence[i]);
+        }
+
+        foreach (string aWord in splitSentence)
+            
+        {
+            Console.WriteLine(aWord);
+        }
+        
     }
 }

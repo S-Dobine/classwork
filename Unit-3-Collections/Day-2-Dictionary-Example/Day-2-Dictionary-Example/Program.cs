@@ -21,8 +21,8 @@ namespace Day_2_Dictionary_Example
             //
             // Syntax:   Dictionary<key-type, value-type> = new Dictionary<key-type, value-type)
 
-         // data-type<key-type, value-type> name = new data-type<key-type, value>();  
-            Dictionary<string, int> personInfo   = new Dictionary<string, int>();
+            // data-type<key-type, value-type> name = new data-type<key-type, value>();  
+            Dictionary<string, int> personInfo = new Dictionary<string, int>();
 
             // Add some people and their zip codes
             //
@@ -30,10 +30,10 @@ namespace Day_2_Dictionary_Example
             //
             // dictionaryName.Add(key, value) 
 
-            personInfo["Frank"]  = 85339;
-            personInfo["Kirk"]   = 48009;
+            personInfo["Frank"] = 85339;
+            personInfo["Kirk"] = 48009;
             personInfo["Spock"] = 15658;
-            personInfo["Bones"]   = 49116;
+            personInfo["Bones"] = 49116;
 
             personInfo.Add("Jenna", 85339);
 
@@ -48,11 +48,11 @@ namespace Day_2_Dictionary_Example
             // if the key value is NOT in the dictionary...
             if (!personInfo.ContainsKey("Frank"))
             {
-                personInfo.Add("Frank", 06082);  // Add it
+                personInfo.Add("Frank", 06082); // Add it
             }
             else // If key IS already in the Dictionary
             {
-                personInfo["Frank"] = 06082;    // Update its value
+                personInfo["Frank"] = 06082; // Update its value
             }
 
             Console.WriteLine("Kirk lives in: " + personInfo["Kirk"]);
@@ -70,12 +70,13 @@ namespace Day_2_Dictionary_Example
                 Console.WriteLine(exceptionInfo.Message);
             }
 
-            // If you want to walkthrough teh entire Dictionary with a foreach
+// If you want to walkthrough the entire Dictionary with a foreach
             //    You need to get all the keys in the Dictionary
             //
             // use the KeyValuePair object in the foreach
             //
             // KeyValuePair<key-type, value-type> name-for-dictionary-entry
+            /* 
 
             foreach (KeyValuePair<string, int> anEntry in personInfo)
             {
