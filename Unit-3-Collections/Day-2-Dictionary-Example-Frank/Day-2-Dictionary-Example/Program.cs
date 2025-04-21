@@ -103,19 +103,42 @@ namespace Day_2_Dictionary_Example
             Dictionary<string, double> gradeBook = new Dictionary<string, double>();
             
             // Lets add 3 students - loop 3 times for-loop
-            for (int i = 0; i < 3; i++)
+            string userResponse = "";
+            do
+           // for (int i = 0; i < 3; i++)
             {
                 // Ask the user for the student name and grade
                 Console.Write("Enter student name: ");
                 string studentName = Console.ReadLine(); // Get student name// Ask the user for the student name
                 Console.Write("Enter grade: ");
-                double grade = Double.Parse(Console.ReadLine()); // Get student grade
 
+                double grade = 0;
+                
+                try
+                {
+
+                    grade = Double.Parse(Console.ReadLine()); // Get student grade
+
+                }
+
+                catch (FormatException exceptionObject)
+                {
+                    Console.WriteLine("The data you entered (" + grade + ")is not a valid number");
+                    Console.WriteLine("The data is ignored");
+                    continue; //skips the rest of hhe loop if ignored
+                }
+                
                 // Add the data to our Dictionary
                 // Dictionary[key}     = value;
+                    
                 gradeBook[studentName] = grade; // gradeBook.Add(studentName, grade) // may cause an exception
-            }
-            
+
+                Console.WriteLine("Are you done? (y/n)");
+                userResponse = Console.ReadLine();
+                // (userResponse != "y"); // loop while theyre not done
+                
+        }
+            while (userResponse != "y"); // loop while theyre not done
             // Display the entrys in our Dictionary
             // Use a KeyValuePair type to get an entry from teh Dictionary
             foreach (KeyValuePair<string, double> anEntry in gradeBook)
