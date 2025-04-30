@@ -84,7 +84,35 @@ public class Student
         studentName = name;   // Set the class data to the data passed in from the user
         testScores  = scores; // Set the class data to the data passed in from the user
     }
-    
+    /********************************************************************************************
+     * Getters and Setters to allow access to our private data.
+     *      These methods allow a class controlled access to the data
+     * 
+     *  Getters - return the value in our data members   GetVariableName
+     *  Setters - allow the changing of data members     SetVariableName
+     * 
+     * Most IDEs will generate standard G & S for any data already defined in the class.
+     ******************************************************************************************/
+
+    public string GetStudentName()
+    {
+        return studentName; // return the value in this private data member
+    }
+
+    public List<double> GetTestScores()
+    {
+        return testScores; // return the value in this private data member
+    }
+
+    public void SetStudentName(string newName)
+    {
+        studentName = newName;
+    }
+
+    public void SetTestScores(List<double> newScores)
+    {
+        testScores = newScores;
+    }
     /********************************************************************************************
      * Methods to manipulate the class
      *******************************************************************************************/
@@ -94,6 +122,26 @@ public class Student
     // Method signature:   access  return
     //                       type   type   MethodName(parameters)
     // Method body: inside { } following method signature
+    
+    // we need to provide a ToString() method to return a string representation of the class data
+    public override string ToString()
+    {
+        // define a variable to hold the return value
+        
+        string theData = " ";
+
+        theData =  $"Name: {studentName}"; //Start with the student name in the string
+        theData += " Scores: "; //Add the testscores to the string
+        foreach (double aScore in testScores)
+        {
+            theData += aScore + ", ";
+        }
+        
+        // return the variable with the result
+        return theData;
+    }
+
+
     public void AddScore(double score) // Accept a score and return nothing
     {
         testScores.Add(score);
@@ -118,13 +166,13 @@ public class Student
         }
 
         // return the variable with the result
-        return sum;
+        return Math.Round(sum, 0);
     }
     
     // Method compute average score for user
     public double AvgOfScores()
-    {
-        return SumOfScores() / testScores.Count; // Using a class method inside another class method
+    {   // to round decimal places: Math.Round(value, # decimal places)
+        return Math.Round(SumOfScores() / testScores.Count, 0); // Using a class method inside another class method
     }
     
     

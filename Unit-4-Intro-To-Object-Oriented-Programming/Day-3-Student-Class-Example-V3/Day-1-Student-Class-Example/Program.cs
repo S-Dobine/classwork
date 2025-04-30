@@ -68,6 +68,8 @@ class Program
     
     johnTheStudent.ShowStudent();  // Display the data in the Student Object
     
+    
+    
     johnTheStudent.AddScore(0);
     johnTheStudent.AddScore(10);
     johnTheStudent.ShowStudent();  // Display the data in the Student Object
@@ -75,6 +77,16 @@ class Program
     Console.WriteLine($"\nThe sum of scores: {johnTheStudent.SumOfScores()}");
     Console.WriteLine($"\nThe avg of scores: {johnTheStudent.AvgOfScores()}");
 
-    //Console.WriteLine(aStudent.studentName);
+    // to see the name of the student
+    //Console.WriteLine($"aStudent object has the name"{aStudent.GetStudentName()}");
+   // Console.WriteLine($"aStudent2 object has the name"{aStudent2.GetStudentName()}");
+        
+        aStudent.SetStudentName("Pete");
+        aStudent.ShowStudent();
+        
+        List<double> newScores = new List<double>();
+        //newScores.Add = 0;
+        aStudent.SetTestScores(newScores);
+        aStudent.ShowStudent();
     }
 }
