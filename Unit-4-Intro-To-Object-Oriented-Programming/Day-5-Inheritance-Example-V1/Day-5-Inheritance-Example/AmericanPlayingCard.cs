@@ -18,6 +18,7 @@ namespace Day_5_Inheritance_Example
         /*************************************************************************************
          * Additional data required by the subclass
          ************************************************************************************/
+
         private const int    DEFAULT_CARD_VALUE = 0;
         private const string DEFAULT_COLOR      = "Black";
         private const string DEFAULT_SUIT       = "Joker";

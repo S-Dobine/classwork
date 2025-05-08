@@ -114,6 +114,14 @@ namespace Day_5_Inheritance_Example
 
             Console.Write($" 2nd card: {usaCard2.CardValue} ({usaCard2.GetCardValueName()}) of {usaCard2.CardSuit}\n");
 
+            
+            myFuncs.WriteSeparatorLine("ItalianPlayingCard Stuff Follows");
+            //define a 2 of coins, yellow
+            ItalianPlayingCard anItalianCard = new ItalianPlayingCard(2, "Coins", "Yellow");
+            ItalianPlayingCard anItalianCard2 = new ItalianPlayingCard(10, "Swords", "Red");
+            
+            Console.WriteLine($"ItalianCard: {anItalianPlayingCard2}");
+            
             myFuncs.PauseProgram();
             
             myFuncs.WriteSeparatorLine("Thanks for trying out our first OOP application!");
