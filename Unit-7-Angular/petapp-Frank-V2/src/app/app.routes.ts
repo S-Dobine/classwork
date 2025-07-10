@@ -7,4 +7,5 @@ import { Homepage } from './components/homepage/homepage';
 export const routes: Routes = [
     // Associate a path to a component - use name of import for the component 
     {path: 'home',     component: Homepage}
+    {path: 'pets',     component: PetDisplay}
 ];

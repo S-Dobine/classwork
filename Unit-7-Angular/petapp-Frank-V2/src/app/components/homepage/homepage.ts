@@ -8,7 +8,7 @@ import { NavBar } from '../nav-bar/nav-bar';
 @Component({
   selector: 'home-page',
   standalone : true,  // Added so we can use the imports property
-  imports: [NavBar],
+  imports: [NavBar,],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css'
 })
