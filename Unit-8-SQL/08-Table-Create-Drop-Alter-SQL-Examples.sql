@@ -1,3 +1,4 @@
+
 ---------------------------------------------------------------------------------------------------------------
 --
 -- DROP - remove a table and all it's data from the database
@@ -64,4 +65,44 @@
 --      ALTER TABLE IF EXISTS table-name RENAME TO new-table-name  - Successful if table exists or not
 --
 ---------------------------------------------------------------------------------------------------------------
+drop table if exists pet_types 	cascade;
+drop table if exists owner	cascade;
+drop table if exists pet	cascade;
 
+create table pet_types
+(
+--column name		data type	nulllness,
+	pet_type_id 	serial 		not null,
+	name 			char(15)	not null,
+	species			varchar(50) not null,
+	
+	CONSTRAINT pk_pet_Type_id PRIMARY KEY (pet_type_id)
+);
+
+
+create table owner
+(
+		owner_id	serial		    not null,
+		last_name	varchar(50)		not null,
+		first_name	varchar(30) 	not null,
+		address		varchar(100),
+		city		varchar(20),
+		state		char(2),
+		
+	CONSTRAINT pk_owner_id PRIMARY KEY (owner_id)
+);
+
+
+create table pet
+(
+pet_id			serial			not null,
+name			varchar(250)	not null,
+pet_type_id		integer			not null,
+
+owner_id		integer			not null,
+CONSTRAINT pk_id	PRIMARY KEY (pet_id),
+CONSTRAINT fk_pet_type_id FOREIGN KEY(pet_type_id)
+REFERENCES pet_types(pet_type_id),
+Constraint fk_ownerid	FOREIGN KEY (owner_id)
+REFERENCES owner (owner_id)
+);
