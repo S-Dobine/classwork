@@ -162,21 +162,39 @@ select * from pet_types;
 -- last_name    first_name  address    city      state
 -- Fella        Frank                  Phoenix   AZ
 -- Corelone     Vito                             NY
--- Gibbs II     Kevin                   Detroit   MI
+-- Gibbs II     Kevin                  Detroit   MI
+
+
+delete from owner; 
 
 Insert into owner
 (first_name   , last_name , address,  city    , state)
 Values('Frank', 'Fella'   , null  , 'Phoenix', 'AZ'),
       ('Vito' , 'Corelone', null  ,  null    , 'NY'),
+	  ('Jay' , 'Durocher', 'Dennis','The Menace','MI'),
+	  ('Jay' , 'North', null  ,  null    , 'MI'),
+	  ('Kathy', 'Fella'   , null  , 'Phoenix', 'AZ'),
       ('Kevin', 'Gibbs II', null  ,  null    , 'MI')
 ;
 select * from owner;
 
 
+select pet_type_id from pet_types where name = 'German Shepard';
+
+insert into pet
+	(name, pet_type_id, owner_id)
+	Values ('Jenna', 
+	(Select pet_type_id from pet_types where name = 'German Shepard' and species ='Dog'),
+	(select owner_id from owner where first_name = 'Frank' and last_name = 'Fella'));
 
 
 -- UPDATE
 
+update pet
+set owner_id = (select owner_id from owner where first_name= 'Kevin' and last_name ='Gibbs II')
+where name = 'Princess' ;
+
+select * from pet where name= 'Princess';
 
 
 -- DELETE
